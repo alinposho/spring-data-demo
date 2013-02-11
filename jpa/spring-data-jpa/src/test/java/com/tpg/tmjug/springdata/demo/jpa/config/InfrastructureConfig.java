@@ -61,7 +61,7 @@ public class InfrastructureConfig {
 
 		LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
 		factory.setJpaVendorAdapter(vendorAdapter);
-		factory.setPackagesToScan(getClass().getPackage().getName());
+		factory.setPackagesToScan("com.tpg.tmjug.springdata.demo.jpa");
 		factory.setDataSource(dataSource());
 
 		return factory;

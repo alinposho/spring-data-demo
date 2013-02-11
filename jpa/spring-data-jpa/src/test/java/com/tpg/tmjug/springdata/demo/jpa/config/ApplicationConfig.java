@@ -21,8 +21,8 @@ import org.springframework.context.annotation.Import;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @Configuration
-@ComponentScan(basePackages = {"com.tpg.tmjug.springdata.demo.repository"})
-@EnableJpaRepositories(basePackages = {"com.tpg.tmjug.springdata.demo.repository"})
+@ComponentScan(basePackages = {"com.tpg.tmjug.springdata.demo"})
+@EnableJpaRepositories(basePackages = {"com.tpg.tmjug.springdata.demo"})
 @Import(InfrastructureConfig.class)
 public class ApplicationConfig {
 }
