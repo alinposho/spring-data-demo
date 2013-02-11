@@ -17,15 +17,14 @@ import org.springframework.data.mongodb.core.mapreduce.MapReduceResults;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.tpg.tmjug.springdata.demo.mongodb.config.UserTestConfig;
+import com.tpg.tmjug.springdata.demo.mongodb.config.MongoUserConfig;
 import com.tpg.tmjug.springdata.demo.mongodb.repository.CustomUserRepository;
 import com.tpg.tmjug.springdata.demo.mongodb.repository.StatisticsRepository;
 import com.tpg.tmjug.springdata.demo.mongodb.repository.UserRepository;
 import com.tpg.tmjug.springdata.demo.mongodb.repository.ValueObject;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = UserTestConfig.class)
-//@ContextConfiguration(locations = "classpath:mongodb-repository-context.xml")
+@ContextConfiguration(classes = MongoUserConfig.class)
 public class UserTest {
 
 	@Autowired
