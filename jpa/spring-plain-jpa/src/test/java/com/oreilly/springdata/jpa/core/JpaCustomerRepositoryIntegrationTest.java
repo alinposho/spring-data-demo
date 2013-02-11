@@ -18,6 +18,8 @@ package com.oreilly.springdata.jpa.core;
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;
 
+import jpa.PlainJpaConfig;
+import jpa.core.repositories.CustomerRepository;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
@@ -35,7 +37,7 @@ import com.oreilly.springdata.jpa.PlainJpaConfig;
 public class JpaCustomerRepositoryIntegrationTest extends AbstractIntegrationTest {
 
 	@Autowired
-	CustomerRepository repository;
+    CustomerRepository repository;
 
 	@Test
 	public void insertsNewCustomerCorrectly() {

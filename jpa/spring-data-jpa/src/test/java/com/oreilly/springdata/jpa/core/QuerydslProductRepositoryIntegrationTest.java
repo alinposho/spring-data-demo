@@ -21,7 +21,6 @@ import static org.junit.Assert.*;
 import org.hamcrest.Matchers;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.querydsl.QueryDslPredicateExecutor;
 import org.springframework.test.context.ContextConfiguration;
 
 import com.mysema.query.types.Predicate;
