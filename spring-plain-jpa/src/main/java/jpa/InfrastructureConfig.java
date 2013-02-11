@@ -28,14 +28,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
 
-/**
- * Common infrastructure configuration class to setup a Spring container and infrastructure components like a
- * {@link javax.sql.DataSource}, a {@link javax.persistence.EntityManagerFactory} and a {@link org.springframework.transaction.PlatformTransactionManager}. Will be used by the
- * configuration activating the plain JPA based repository configuration (see {@link PlainJpaConfig}) as well as the
- * Spring Data JPA based one (see {@link ApplicationConfig}).
- *
- * @author Oliver Gierke
- */
 @Configuration
 @EnableTransactionManagement
 public class InfrastructureConfig {

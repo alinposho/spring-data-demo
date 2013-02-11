@@ -13,11 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jpa.order;
+package jpa.core.entities;
 
-import com.oreilly.springdata.jpa.core.AbstractEntity;
-import com.oreilly.springdata.jpa.core.Address;
-import com.oreilly.springdata.jpa.core.Customer;
 import org.springframework.util.Assert;
 
 import javax.persistence.*;
@@ -49,7 +46,7 @@ public class Order extends AbstractEntity {
 	private Set<LineItem> lineItems = new HashSet<LineItem>();
 
 	/**
-	 * Creates a new {@link jpa.order.Order} for the given {@link Customer}.
+	 * Creates a new {@link jpa.core.entities.Order} for the given {@link Customer}.
 	 *
 	 * @param customer must not be {@literal null}.
 	 * @param shippingAddress must not be {@literal null}.
@@ -59,7 +56,7 @@ public class Order extends AbstractEntity {
 	}
 
 	/**
-	 * Creates a new {@link jpa.order.Order} for the given customer, shipping and billing {@link Address}.
+	 * Creates a new {@link jpa.core.entities.Order} for the given customer, shipping and billing {@link Address}.
 	 *
 	 * @param customer must not be {@literal null}.
 	 * @param shippingAddress must not be {@literal null}.
@@ -80,7 +77,7 @@ public class Order extends AbstractEntity {
 	}
 
 	/**
-	 * Adds the given {@link LineItem} to the {@link jpa.order.Order}.
+	 * Adds the given {@link LineItem} to the {@link jpa.core.entities.Order}.
 	 *
 	 * @param lineItem
 	 */
@@ -89,7 +86,7 @@ public class Order extends AbstractEntity {
 	}
 
 	/**
-	 * Returns the {@link Customer} who placed the {@link jpa.order.Order}.
+	 * Returns the {@link Customer} who placed the {@link jpa.core.entities.Order}.
 	 *
 	 * @return
 	 */
@@ -116,7 +113,7 @@ public class Order extends AbstractEntity {
 	}
 
 	/**
-	 * Returns all {@link LineItem}s currently belonging to the {@link jpa.order.Order}.
+	 * Returns all {@link LineItem}s currently belonging to the {@link jpa.core.entities.Order}.
 	 *
 	 * @return
 	 */
@@ -125,7 +122,7 @@ public class Order extends AbstractEntity {
 	}
 
 	/**
-	 * Returns the total of the {@link jpa.order.Order}.
+	 * Returns the total of the {@link jpa.core.entities.Order}.
 	 * 
 	 * @return
 	 */

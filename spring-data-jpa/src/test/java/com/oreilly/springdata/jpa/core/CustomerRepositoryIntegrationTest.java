@@ -15,26 +15,28 @@
  */
 package com.oreilly.springdata.jpa.core;
 
-import static org.hamcrest.Matchers.*;
-import static org.junit.Assert.*;
-
+import com.oreilly.springdata.jpa.AbstractIntegrationTest;
+import jpa.ApplicationConfig;
+import jpa.core.entities.Address;
+import jpa.core.entities.Customer;
+import jpa.core.entities.EmailAddress;
+import jpa.core.repositories.CustomerRepository;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 
-import com.oreilly.springdata.jpa.AbstractIntegrationTest;
-import com.oreilly.springdata.jpa.ApplicationConfig;
+import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.notNullValue;
+import static org.junit.Assert.assertThat;
 
 /**
  * Integration tests for {@link CustomerRepository}.
- * 
- * @author Oliver Gierke
  */
 @ContextConfiguration(classes = ApplicationConfig.class)
 public class CustomerRepositoryIntegrationTest extends AbstractIntegrationTest {
 
 	@Autowired
-	CustomerRepository repository;
+    CustomerRepository repository;
 
 	@Test
 	public void savesCustomerCorrectly() {

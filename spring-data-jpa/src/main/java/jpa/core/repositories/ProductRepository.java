@@ -26,8 +26,6 @@ import java.util.List;
 
 /**
  * Repository to access {@link Product} instances.
- * 
- * @author Oliver Gierke
  */
 public interface ProductRepository extends CrudRepository<Product, Long>, QueryDslPredicateExecutor<Product> {
 

@@ -15,18 +15,11 @@
  */
 package jpa;
 
-import com.oreilly.springdata.jpa.core.Customer;
+import jpa.core.entities.Customer;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
-/**
- * JavaConfig class to activate component scanning to pick up
- * {@link com.oreilly.springdata.jpa.core.JpaCustomerRepository}. Re-uses the common infrastructure configuration
- * defined in {@link jpa.InfrastructureConfig}.
- * 
- * @author Oliver Gierke
- */
 @Configuration
 @ComponentScan(basePackageClasses = Customer.class)
 @Import(InfrastructureConfig.class)

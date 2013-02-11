@@ -15,13 +15,10 @@
  */
 package com.oreilly.springdata.jpa.core;
 
-import static com.oreilly.springdata.jpa.core.CoreMatchers.*;
-import static org.hamcrest.Matchers.*;
-import static org.junit.Assert.*;
-
-import java.math.BigDecimal;
-import java.util.List;
-
+import com.oreilly.springdata.jpa.AbstractIntegrationTest;
+import jpa.ApplicationConfig;
+import jpa.core.entities.Product;
+import jpa.core.repositories.ProductRepository;
 import org.hamcrest.Matchers;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,8 +28,13 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort.Direction;
 import org.springframework.test.context.ContextConfiguration;
 
-import com.oreilly.springdata.jpa.AbstractIntegrationTest;
-import com.oreilly.springdata.jpa.ApplicationConfig;
+import java.math.BigDecimal;
+import java.util.List;
+
+import static com.oreilly.springdata.jpa.core.CoreMatchers.named;
+import static org.hamcrest.Matchers.hasSize;
+import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.assertThat;
 
 /**
  * Integration tests for {@link ProductRepository}.
@@ -43,7 +45,7 @@ import com.oreilly.springdata.jpa.ApplicationConfig;
 public class ProductRepositoryIntegrationTest extends AbstractIntegrationTest {
 
 	@Autowired
-	ProductRepository repository;
+    ProductRepository repository;
 
 	@Test
 	public void createProduct() {

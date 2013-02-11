@@ -27,8 +27,6 @@ import java.util.Map;
 
 /**
  * A product.
- * 
- * @author Oliver Gierke
  */
 @Entity
 public class Product extends AbstractEntity {
@@ -44,7 +42,7 @@ public class Product extends AbstractEntity {
 	private Map<String, String> attributes = new HashMap<String, String>();
 
 	/**
-	 * Creates a new {@link Product} with the given name.
+	 * Creates a new {@link jpa.core.entities.Product} with the given name.
 	 *
 	 * @param name must not be {@literal null} or empty.
 	 * @param price must not be {@literal null} or less than or equal to zero.
@@ -54,7 +52,7 @@ public class Product extends AbstractEntity {
 	}
 
 	/**
-	 * Creates a new {@link Product} from the given name and description.
+	 * Creates a new {@link jpa.core.entities.Product} from the given name and description.
 	 *
 	 * @param name must not be {@literal null} or empty.
 	 * @param price must not be {@literal null} or less than or equal to zero.
@@ -92,7 +90,7 @@ public class Product extends AbstractEntity {
 	}
 
 	/**
-	 * Returns the {@link Product}'s name.
+	 * Returns the {@link jpa.core.entities.Product}'s name.
 	 *
 	 * @return
 	 */
@@ -101,7 +99,7 @@ public class Product extends AbstractEntity {
 	}
 
 	/**
-	 * Returns the {@link Product}'s description.
+	 * Returns the {@link jpa.core.entities.Product}'s description.
 	 *
 	 * @return
 	 */
@@ -110,7 +108,7 @@ public class Product extends AbstractEntity {
 	}
 
 	/**
-	 * Returns all the custom attributes of the {@link Product}.
+	 * Returns all the custom attributes of the {@link jpa.core.entities.Product}.
 	 *
 	 * @return
 	 */
@@ -119,7 +117,7 @@ public class Product extends AbstractEntity {
 	}
 
 	/**
-	 * Returns the price of the {@link Product}.
+	 * Returns the price of the {@link jpa.core.entities.Product}.
 	 * 
 	 * @return
 	 */

@@ -13,10 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jpa.order;
+package jpa.core.entities;
 
-import com.oreilly.springdata.jpa.core.AbstractEntity;
-import com.oreilly.springdata.jpa.core.Product;
 import org.springframework.util.Assert;
 
 import javax.persistence.Column;
@@ -26,8 +24,6 @@ import java.math.BigDecimal;
 
 /**
  * A line item.
- * 
- * @author Oliver Gierke
  */
 @Entity
 public class LineItem extends AbstractEntity {
@@ -40,7 +36,7 @@ public class LineItem extends AbstractEntity {
 	private int amount;
 
 	/**
-	 * Creates a new {@link jpa.order.LineItem} for the given {@link Product}.
+	 * Creates a new {@link jpa.core.entities.LineItem} for the given {@link Product}.
 	 *
 	 * @param product must not be {@literal null}.
 	 */
@@ -49,7 +45,7 @@ public class LineItem extends AbstractEntity {
 	}
 
 	/**
-	 * Creates a new {@link jpa.order.LineItem} for the given {@link Product} and amount.
+	 * Creates a new {@link jpa.core.entities.LineItem} for the given {@link Product} and amount.
 	 *
 	 * @param product must not be {@literal null}.
 	 * @param amount
@@ -69,7 +65,7 @@ public class LineItem extends AbstractEntity {
 	}
 
 	/**
-	 * Returns the {@link Product} the {@link jpa.order.LineItem} refers to.
+	 * Returns the {@link Product} the {@link jpa.core.entities.LineItem} refers to.
 	 *
 	 * @return
 	 */
@@ -87,7 +83,7 @@ public class LineItem extends AbstractEntity {
 	}
 
 	/**
-	 * Returns the price a single unit of the {@link jpa.order.LineItem}'s product.
+	 * Returns the price a single unit of the {@link jpa.core.entities.LineItem}'s product.
 	 *
 	 * @return the price
 	 */
@@ -96,7 +92,7 @@ public class LineItem extends AbstractEntity {
 	}
 
 	/**
-	 * Returns the total for the {@link jpa.order.LineItem}.
+	 * Returns the total for the {@link jpa.core.entities.LineItem}.
 	 * 
 	 * @return
 	 */

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jpa.core;
+package jpa.core.repositories;
 
 import jpa.core.entities.Customer;
 import jpa.core.entities.EmailAddress;
@@ -24,9 +24,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 
 /**
- * Plain JPA based implementation of {@link jpa.core.CustomerRepository}.
- * 
- * @author Oliver Gierke
+ * Plain JPA based implementation of {@link CustomerRepository}.
  */
 @Repository
 class JpaCustomerRepository implements CustomerRepository {
@@ -34,19 +32,11 @@ class JpaCustomerRepository implements CustomerRepository {
 	@PersistenceContext
 	private EntityManager em;
 
-	/* 
-	 * (non-Javadoc)
-	 * @see com.oreilly.springdata.jpa.core.CustomerRepository#findOne(java.lang.Long)
-	 */
 	@Override
 	public Customer findOne(Long id) {
 		return em.find(Customer.class, id);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see com.oreilly.springdata.jpa.core.CustomerRepository#save(com.oreilly.springdata.jpa.core.entities.Customer)
-	 */
 	public Customer save(Customer customer) {
 		if (customer.getId() == null) {
 			em.persist(customer);
@@ -56,10 +46,6 @@ class JpaCustomerRepository implements CustomerRepository {
 		}
 	}
 
-	/* 
-	 * (non-Javadoc)
-	 * @see com.oreilly.springdata.jpa.core.CustomerRepository#findByEmailAddress(com.oreilly.springdata.jpa.core.entities.EmailAddress)
-	 */
 	@Override
 	public Customer findByEmailAddress(EmailAddress emailAddress) {
 

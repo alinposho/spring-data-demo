@@ -23,8 +23,6 @@ import java.util.regex.Pattern;
 
 /**
  * A value object abstraction of an email address.
- * 
- * @author Oliver Gierke
  */
 @Embeddable
 public class EmailAddress {
@@ -36,7 +34,7 @@ public class EmailAddress {
 	private String value;
 
 	/**
-	 * Creates a new {@link EmailAddress} from the given string source.
+	 * Creates a new {@link jpa.core.entities.EmailAddress} from the given string source.
 	 *
 	 * @param emailAddress must not be {@literal null} or empty.
 	 */
@@ -50,7 +48,7 @@ public class EmailAddress {
 	}
 
 	/**
-	 * Returns whether the given {@link String} is a valid {@link EmailAddress} which means you can safely instantiate the
+	 * Returns whether the given {@link String} is a valid {@link jpa.core.entities.EmailAddress} which means you can safely instantiate the
 	 * class.
 	 * 
 	 * @param candidate

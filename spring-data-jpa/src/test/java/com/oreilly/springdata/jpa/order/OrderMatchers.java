@@ -17,6 +17,9 @@ package com.oreilly.springdata.jpa.order;
 
 import static org.hamcrest.Matchers.*;
 
+import jpa.core.entities.LineItem;
+import jpa.core.entities.Order;
+import jpa.core.entities.Product;
 import org.hamcrest.Matcher;
 
 import com.oreilly.springdata.jpa.core.Product;
@@ -39,7 +42,7 @@ public class OrderMatchers {
 	}
 
 	/**
-	 * Matches if the {@link Order} has a {@link LineItem} matching the given {@link org.hamcrest.Matcher}.
+	 * Matches if the {@link jpa.core.entities.Order} has a {@link LineItem} matching the given {@link org.hamcrest.Matcher}.
 	 * 
 	 * @param matcher must not be {@literal null}.
 	 * @return
@@ -49,7 +52,7 @@ public class OrderMatchers {
 	}
 
 	/**
-	 * Matches if the {@link LineItem} refers to a {@link Product} that matches the given {@link org.hamcrest.Matcher}.
+	 * Matches if the {@link LineItem} refers to a {@link jpa.core.entities.Product} that matches the given {@link org.hamcrest.Matcher}.
 	 * 
 	 * @param matcher must not be {@literal null}.
 	 * @return

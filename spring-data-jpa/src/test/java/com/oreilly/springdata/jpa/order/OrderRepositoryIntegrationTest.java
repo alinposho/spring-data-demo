@@ -15,25 +15,26 @@
  */
 package com.oreilly.springdata.jpa.order;
 
-import static com.oreilly.springdata.jpa.core.CoreMatchers.*;
-import static com.oreilly.springdata.jpa.order.OrderMatchers.*;
-import static org.hamcrest.Matchers.*;
-import static org.junit.Assert.*;
-
-import java.util.List;
-
+import com.oreilly.springdata.jpa.AbstractIntegrationTest;
+import com.oreilly.springdata.jpa.core.Customer;
+import com.oreilly.springdata.jpa.core.Product;
+import jpa.ApplicationConfig;
+import jpa.core.entities.*;
+import jpa.core.repositories.CustomerRepository;
+import jpa.core.repositories.OrderRepository;
+import jpa.core.repositories.ProductRepository;
 import org.hamcrest.Matcher;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 
-import com.oreilly.springdata.jpa.AbstractIntegrationTest;
-import com.oreilly.springdata.jpa.ApplicationConfig;
-import com.oreilly.springdata.jpa.core.Customer;
-import com.oreilly.springdata.jpa.core.CustomerRepository;
-import com.oreilly.springdata.jpa.core.EmailAddress;
-import com.oreilly.springdata.jpa.core.Product;
-import com.oreilly.springdata.jpa.core.ProductRepository;
+import java.util.List;
+
+import static com.oreilly.springdata.jpa.core.CoreMatchers.named;
+import static com.oreilly.springdata.jpa.core.CoreMatchers.with;
+import static com.oreilly.springdata.jpa.order.OrderMatchers.*;
+import static org.hamcrest.Matchers.*;
+import static org.junit.Assert.assertThat;
 
 /**
  * Integration tests for {@link OrderRepository}.
@@ -44,12 +45,12 @@ import com.oreilly.springdata.jpa.core.ProductRepository;
 public class OrderRepositoryIntegrationTest extends AbstractIntegrationTest {
 
 	@Autowired
-	OrderRepository repository;
+    OrderRepository repository;
 
 	@Autowired
-	CustomerRepository customerRepository;
+    CustomerRepository customerRepository;
 	@Autowired
-	ProductRepository productRepository;
+    ProductRepository productRepository;
 
 	@Test
 	public void createOrder() {

@@ -24,8 +24,6 @@ import java.util.Set;
 
 /**
  * A customer.
- * 
- * @author Oliver Gierke
  */
 @Entity
 public class Customer extends AbstractEntity {
@@ -40,7 +38,7 @@ public class Customer extends AbstractEntity {
 	private Set<Address> addresses = new HashSet<Address>();
 
 	/**
-	 * Creates a new {@link Customer} from the given firstname and lastname.
+	 * Creates a new {@link jpa.core.entities.Customer} from the given firstname and lastname.
 	 *
 	 * @param firstname must not be {@literal null} or empty.
 	 * @param lastname must not be {@literal null} or empty.
@@ -59,7 +57,7 @@ public class Customer extends AbstractEntity {
 	}
 
 	/**
-	 * Adds the given {@link Address} to the {@link Customer}.
+	 * Adds the given {@link jpa.core.entities.Address} to the {@link jpa.core.entities.Customer}.
 	 *
 	 * @param address must not be {@literal null}.
 	 */
@@ -70,7 +68,7 @@ public class Customer extends AbstractEntity {
 	}
 
 	/**
-	 * Returns the firstname of the {@link Customer}.
+	 * Returns the firstname of the {@link jpa.core.entities.Customer}.
 	 *
 	 * @return
 	 */
@@ -79,7 +77,7 @@ public class Customer extends AbstractEntity {
 	}
 
 	/**
-	 * Returns the lastname of the {@link Customer}.
+	 * Returns the lastname of the {@link jpa.core.entities.Customer}.
 	 *
 	 * @return
 	 */
@@ -88,7 +86,7 @@ public class Customer extends AbstractEntity {
 	}
 
 	/**
-	 * Sets the lastname of the {@link Customer}.
+	 * Sets the lastname of the {@link jpa.core.entities.Customer}.
 	 *
 	 * @param lastname
 	 */
@@ -97,7 +95,7 @@ public class Customer extends AbstractEntity {
 	}
 
 	/**
-	 * Returns the {@link EmailAddress} of the {@link Customer}.
+	 * Returns the {@link EmailAddress} of the {@link jpa.core.entities.Customer}.
 	 *
 	 * @return
 	 */
@@ -106,7 +104,7 @@ public class Customer extends AbstractEntity {
 	}
 
 	/**
-	 * Sets the {@link Customer}'s {@link EmailAddress}.
+	 * Sets the {@link jpa.core.entities.Customer}'s {@link EmailAddress}.
 	 *
 	 * @param emailAddress must not be {@literal null}.
 	 */
@@ -115,7 +113,7 @@ public class Customer extends AbstractEntity {
 	}
 
 	/**
-	 * Return the {@link Customer}'s addresses.
+	 * Return the {@link jpa.core.entities.Customer}'s addresses.
 	 * 
 	 * @return
 	 */

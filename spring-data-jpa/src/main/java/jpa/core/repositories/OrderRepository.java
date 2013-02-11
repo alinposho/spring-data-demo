@@ -15,21 +15,21 @@
  */
 package jpa.core.repositories;
 
-import com.oreilly.springdata.jpa.core.Customer;
+import jpa.core.entities.Customer;
 import jpa.core.entities.Order;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
 import java.util.List;
 
 /**
- * Repository to access {@link jpa.core.entities.Order}s.
+ * Repository to access {@link Order}s.
  * 
  * @author Oliver Gierke
  */
 public interface OrderRepository extends PagingAndSortingRepository<Order, Long> {
 
 	/**
-	 * Returns all {@link Order}s of the given {@link Customer}.
+	 * Returns all {@link Order}s of the given {@link jpa.core.entities.Customer}.
 	 * 
 	 * @param customer
 	 * @return

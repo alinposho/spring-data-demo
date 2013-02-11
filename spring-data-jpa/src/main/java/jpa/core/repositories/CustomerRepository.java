@@ -21,8 +21,7 @@ import org.springframework.data.repository.Repository;
 
 /**
  * {@link org.springframework.data.repository.Repository} to access {@link Customer} instances.
- * 
- * @author Oliver Gierke
+ *
  */
 public interface CustomerRepository extends Repository<Customer, Long> {
 

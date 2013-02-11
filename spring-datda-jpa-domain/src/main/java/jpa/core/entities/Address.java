@@ -21,8 +21,6 @@ import javax.persistence.Entity;
 
 /**
  * An address.
- * 
- * @author Oliver Gierke
  */
 @Entity
 public class Address extends AbstractEntity {
@@ -30,7 +28,7 @@ public class Address extends AbstractEntity {
 	private String street, city, country;
 
 	/**
-	 * Creates a new {@link Address} from the given street, city and country.
+	 * Creates a new {@link jpa.core.entities.Address} from the given street, city and country.
 	 *
 	 * @param street must not be {@literal null} or empty.
 	 * @param city must not be {@literal null} or empty.
@@ -52,7 +50,7 @@ public class Address extends AbstractEntity {
 	}
 
 	/**
-	 * Returns a copy of the current {@link Address} instance which is a new entities in terms of persistence.
+	 * Returns a copy of the current {@link jpa.core.entities.Address} instance which is a new entities in terms of persistence.
 	 * 
 	 * @return
 	 */
