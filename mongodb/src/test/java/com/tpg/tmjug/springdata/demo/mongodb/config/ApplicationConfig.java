@@ -6,13 +6,11 @@ import org.springframework.data.mongodb.config.AbstractMongoConfiguration;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.SimpleMongoDbFactory;
 import org.springframework.data.mongodb.core.WriteResultChecking;
-import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
 import com.mongodb.Mongo;
 import com.mongodb.WriteConcern;
 
 @Configuration
-@EnableMongoRepositories(basePackages = "com.tpg.tmjug.springdata.demo.repository")
 public abstract class ApplicationConfig extends AbstractMongoConfiguration {
 
 	@Override
