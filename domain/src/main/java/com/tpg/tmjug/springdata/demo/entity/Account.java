@@ -5,14 +5,17 @@ import javax.persistence.Entity;
 @Entity
 public class Account extends AbstractEntity {
 
-	private final long balance;
+    private long balance;
 
-	public Account(final long balance) {
-		this.balance = balance;
-	}
-	
-	public long getBalance() {
-		return balance;
-	}
-	
+    public Account(final long balance) {
+        this.balance = balance;
+    }
+
+    protected Account() {
+    }
+
+    public long getBalance() {
+        return balance;
+    }
+
 }

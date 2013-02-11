@@ -9,23 +9,23 @@
 		http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 
-    <jpa:repositories base-package="com.tpg.tmjug.springdata.demo.repository"/>
+    <jpa:repositories base-package="com.tpg.tmjug.springdata.demo.repository" />
 
-    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
-        <property name="entityManagerFactory" ref="entityManagerFactory"/>
+    <bean class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactory" />
     </bean>
 
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
-        <property name="dataSource" ref="dataSource"/>
-        <property name="packagesToScan" value="com.tpg.tmjug.springdata.demo.entity"/>
+        <property name="dataSource" ref="dataSource" />
+        <property name="packagesToScan" value="com.tpg.tmjug.springdata.demo.entity" />
         <property name="jpaVendorAdapter">
             <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
-                <property name="database" value="HSQL"/>
-                <property name="generateDdl" value="true"/>
+                <property name="database" value="HSQL" />
+                <property name="generateDdl" value="true" />
             </bean>
         </property>
     </bean>
 
-    <jdbc:embedded-database id="dataSource" type="HSQL"/>
+    <jdbc:embedded-database id="dataSource" type="HSQL" />
 
 </beans>
