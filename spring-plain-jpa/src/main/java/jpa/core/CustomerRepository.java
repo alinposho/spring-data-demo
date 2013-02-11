@@ -15,6 +15,8 @@
  */
 package jpa.core;
 
+import jpa.core.entities.Customer;
+import jpa.core.entities.EmailAddress;
 import org.springframework.data.repository.Repository;
 
 /**

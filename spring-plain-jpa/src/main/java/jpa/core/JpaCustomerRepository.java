@@ -15,6 +15,8 @@
  */
 package jpa.core;
 
+import jpa.core.entities.Customer;
+import jpa.core.entities.EmailAddress;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
@@ -22,7 +24,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 
 /**
- * Plain JPA based implementation of {@link CustomerRepository}.
+ * Plain JPA based implementation of {@link jpa.core.CustomerRepository}.
  * 
  * @author Oliver Gierke
  */
@@ -43,7 +45,7 @@ class JpaCustomerRepository implements CustomerRepository {
 
 	/*
 	 * (non-Javadoc)
-	 * @see com.oreilly.springdata.jpa.core.CustomerRepository#save(com.oreilly.springdata.jpa.core.Customer)
+	 * @see com.oreilly.springdata.jpa.core.CustomerRepository#save(com.oreilly.springdata.jpa.core.entities.Customer)
 	 */
 	public Customer save(Customer customer) {
 		if (customer.getId() == null) {
@@ -56,7 +58,7 @@ class JpaCustomerRepository implements CustomerRepository {
 
 	/* 
 	 * (non-Javadoc)
-	 * @see com.oreilly.springdata.jpa.core.CustomerRepository#findByEmailAddress(com.oreilly.springdata.jpa.core.EmailAddress)
+	 * @see com.oreilly.springdata.jpa.core.CustomerRepository#findByEmailAddress(com.oreilly.springdata.jpa.core.entities.EmailAddress)
 	 */
 	@Override
 	public Customer findByEmailAddress(EmailAddress emailAddress) {

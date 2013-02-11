@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jpa.core;
+package jpa.core.entities;
 
 import org.springframework.util.Assert;
 
@@ -52,7 +52,7 @@ public class Address extends AbstractEntity {
 	}
 
 	/**
-	 * Returns a copy of the current {@link Address} instance which is a new entity in terms of persistence.
+	 * Returns a copy of the current {@link Address} instance which is a new entities in terms of persistence.
 	 * 
 	 * @return
 	 */

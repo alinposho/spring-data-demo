@@ -13,23 +13,36 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jpa;
+package com.oreilly.springdata.jpa.core;
 
-import com.oreilly.springdata.jpa.core.Customer;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
+import static org.hamcrest.Matchers.*;
+
+import org.hamcrest.Matcher;
 
 /**
- * JavaConfig class to activate component scanning to pick up
- * {@link com.oreilly.springdata.jpa.core.JpaCustomerRepository}. Re-uses the common infrastructure configuration
- * defined in {@link InfrastructureConfig}.
+ * Custom matchers to ease assertions on our domain classes.
  * 
  * @author Oliver Gierke
  */
-@Configuration
-@ComponentScan(basePackageClasses = Customer.class)
-@Import(InfrastructureConfig.class)
-public class PlainJpaConfig {
+public class CoreMatchers {
 
+	/**
+	 * Syntactic sugar to make Matchers more readable.
+	 * 
+	 * @param matcher must not be {@literal null}.
+	 * @return
+	 */
+	public static <T> Matcher<T> with(Matcher<T> matcher) {
+		return matcher;
+	}
+
+	/**
+	 * Matches if the {@link Product} has the given name.
+	 * 
+	 * @param name must not be {@literal null}.
+	 * @return
+	 */
+	public static Matcher<Product> named(String name) {
+		return hasProperty("name", is(name));
+	}
 }

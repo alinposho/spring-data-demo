@@ -15,20 +15,21 @@
  */
 package jpa;
 
-import jpa.InfrastructureConfig;
+import com.oreilly.springdata.jpa.core.Customer;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 /**
- * JavaConfig class to enable Spring Data JPA repositories. Re-using common infrastrcuture configuration from
- * {@link jpa.InfrastructureConfig}.
+ * JavaConfig class to activate component scanning to pick up
+ * {@link com.oreilly.springdata.jpa.core.JpaCustomerRepository}. Re-uses the common infrastructure configuration
+ * defined in {@link jpa.InfrastructureConfig}.
  * 
  * @author Oliver Gierke
  */
 @Configuration
-@EnableJpaRepositories
+@ComponentScan(basePackageClasses = Customer.class)
 @Import(InfrastructureConfig.class)
-public class ApplicationConfig {
+public class PlainJpaConfig {
 
 }

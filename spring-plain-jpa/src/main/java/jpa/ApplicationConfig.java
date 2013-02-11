@@ -13,25 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jpa.order;
+package jpa;
 
-import com.oreilly.springdata.jpa.core.Customer;
-import org.springframework.data.repository.PagingAndSortingRepository;
-
-import java.util.List;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 /**
- * Repository to access {@link Order}s.
+ * JavaConfig class to enable Spring Data JPA repositories. Re-using common infrastrcuture configuration from
+ * {@link jpa.InfrastructureConfig}.
  * 
  * @author Oliver Gierke
  */
-public interface OrderRepository extends PagingAndSortingRepository<Order, Long> {
+@Configuration
+@EnableJpaRepositories
+@Import(InfrastructureConfig.class)
+public class ApplicationConfig {
 
-	/**
-	 * Returns all {@link Order}s of the given {@link Customer}.
-	 * 
-	 * @param customer
-	 * @return
-	 */
-	List<Order> findByCustomer(Customer customer);
 }

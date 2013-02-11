@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jpa.core;
+package jpa.core.entities;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,7 +21,7 @@ import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
 /**
- * Base class to derive entity classes from.
+ * Base class to derive entities classes from.
  * 
  * @author Oliver Gierke
  */
@@ -33,7 +33,7 @@ public class AbstractEntity {
 	private Long id;
 
 	/**
-	 * Returns the identifier of the entity.
+	 * Returns the identifier of the entities.
 	 * 
 	 * @return the id
 	 */

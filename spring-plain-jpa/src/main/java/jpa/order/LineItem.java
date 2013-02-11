@@ -40,7 +40,7 @@ public class LineItem extends AbstractEntity {
 	private int amount;
 
 	/**
-	 * Creates a new {@link LineItem} for the given {@link Product}.
+	 * Creates a new {@link jpa.order.LineItem} for the given {@link Product}.
 	 *
 	 * @param product must not be {@literal null}.
 	 */
@@ -49,7 +49,7 @@ public class LineItem extends AbstractEntity {
 	}
 
 	/**
-	 * Creates a new {@link LineItem} for the given {@link Product} and amount.
+	 * Creates a new {@link jpa.order.LineItem} for the given {@link Product} and amount.
 	 *
 	 * @param product must not be {@literal null}.
 	 * @param amount
@@ -69,7 +69,7 @@ public class LineItem extends AbstractEntity {
 	}
 
 	/**
-	 * Returns the {@link Product} the {@link LineItem} refers to.
+	 * Returns the {@link Product} the {@link jpa.order.LineItem} refers to.
 	 *
 	 * @return
 	 */
@@ -87,7 +87,7 @@ public class LineItem extends AbstractEntity {
 	}
 
 	/**
-	 * Returns the price a single unit of the {@link LineItem}'s product.
+	 * Returns the price a single unit of the {@link jpa.order.LineItem}'s product.
 	 *
 	 * @return the price
 	 */
@@ -96,7 +96,7 @@ public class LineItem extends AbstractEntity {
 	}
 
 	/**
-	 * Returns the total for the {@link LineItem}.
+	 * Returns the total for the {@link jpa.order.LineItem}.
 	 * 
 	 * @return
 	 */
