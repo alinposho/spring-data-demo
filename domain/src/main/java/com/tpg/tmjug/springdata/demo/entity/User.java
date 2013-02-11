@@ -5,10 +5,15 @@ import java.util.List;
 
 import org.springframework.data.annotation.PersistenceConstructor;
 
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+
+@Entity
 public class User extends AbstractEntity {
 
 	private final String name;
 	private final int age;
+    @OneToMany
 	private final List<Account> accounts;
 	
 	@PersistenceConstructor

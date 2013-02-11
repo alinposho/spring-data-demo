@@ -1,15 +1,21 @@
 package com.tpg.tmjug.springdata.demo.entity;
 
-import org.springframework.data.annotation.Id;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 
+@MappedSuperclass
 public abstract class AbstractEntity {
 
 	@Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
 	private String id;
 	
 	public AbstractEntity(final String id) {
 		this.id = id;
 	}
+    public AbstractEntity() { }
 	
 	public String getId() {
 		return id;
