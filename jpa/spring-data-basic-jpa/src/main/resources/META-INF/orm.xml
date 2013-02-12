@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_2_0.xsd"
+                 version="2.0">
+
+    <mapped-superclass class="com.tpg.tmjug.springdata.demo.entity.AbstractEntity">
+        <attributes>
+            <id name="id"/>
+        </attributes>
+    </mapped-superclass>
+
+
+    <entity name="Customer" class="com.tpg.tmjug.springdata.demo.entity.Customer" access="FIELD">
+        <attributes>
+            <one-to-many name="accounts" target-entity="com.tpg.tmjug.springdata.demo.entity.Account">
+                <cascade>
+                    <cascade-all/>
+                </cascade>
+            </one-to-many>
+        </attributes>
+    </entity>
+    <entity name="Account" class="com.tpg.tmjug.springdata.demo.entity.Account" access="FIELD"/>
+
+</entity-mappings>

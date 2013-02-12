@@ -27,11 +27,6 @@ import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-/**
- * Base class for integration tests.
- * 
- * @author Oliver Gierke
- */
 @RunWith(SpringJUnit4ClassRunner.class)
 @Transactional
 public abstract class AbstractIntegrationTest {

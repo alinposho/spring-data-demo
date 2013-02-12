@@ -15,14 +15,14 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = ApplicationConfig.class)
-public class BasicUserTest {
+@ContextConfiguration(locations = "classpath:META-INF/spring/application-context.xml")
+public class BasicCustomerXmlConfigTest {
 
     @Autowired
     CustomerRepository genericUserRepository;
 
     @Test
-    public void shouldPersistNewUser() {
+    public void should_persist_new_customer() {
         // Prepare
         List<Account> accounts = Arrays.asList(new Account(78L));
         Customer customer = new Customer("Doe", 21, accounts);

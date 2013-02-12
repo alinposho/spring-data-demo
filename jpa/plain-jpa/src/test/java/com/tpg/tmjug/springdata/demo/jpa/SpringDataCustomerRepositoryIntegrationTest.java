@@ -30,8 +30,8 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.junit.Assert.assertThat;
 
-@ContextConfiguration(locations = "classpath:META-INF/spring/plain-jpa-application-context.xml")
-public class JpaCustomerRepositoryIntegrationTest extends AbstractIntegrationTest {
+@ContextConfiguration(locations = "classpath:META-INF/spring/spring-data-jpa-application-context.xml")
+public class SpringDataCustomerRepositoryIntegrationTest extends AbstractIntegrationTest {
 
 	@Autowired
     CustomerRepository repository;

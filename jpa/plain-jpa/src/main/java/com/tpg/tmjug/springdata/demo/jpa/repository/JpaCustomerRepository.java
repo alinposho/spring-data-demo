@@ -15,7 +15,6 @@
  */
 package com.tpg.tmjug.springdata.demo.jpa.repository;
 
-import com.tpg.tmjug.springdata.demo.jpa.entity.Account;
 import com.tpg.tmjug.springdata.demo.jpa.entity.Address;
 import com.tpg.tmjug.springdata.demo.jpa.entity.Customer;
 import org.springframework.stereotype.Repository;
@@ -24,11 +23,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 
-/**
- * Plain JPA based implementation of {@link CustomerRepository}.
- * 
- * @author Oliver Gierke
- */
 @Repository
 class JpaCustomerRepository implements CustomerRepository {
 

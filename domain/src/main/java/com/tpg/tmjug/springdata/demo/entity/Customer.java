@@ -1,23 +1,19 @@
 package com.tpg.tmjug.springdata.demo.entity;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
 public class Customer extends AbstractEntity {
 
     private String name;
     private int age;
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<? extends Account> accounts = new ArrayList<>();
+    private List<Account> accounts = new ArrayList<>();
 
     protected Customer() {
     }
 
-    public Customer(Long id, String name, int age, List<? extends Account> accounts) {
+    public Customer(Long id, String name, int age, List<Account> accounts) {
         super(id);
 
         this.name = name;
@@ -25,7 +21,7 @@ public class Customer extends AbstractEntity {
         this.accounts = accounts;
     }
 
-    public Customer(String name, int age, List<? extends Account> accounts) {
+    public Customer(String name, int age, List<Account> accounts) {
         this(null, name, age, accounts);
     }
 
@@ -41,7 +37,7 @@ public class Customer extends AbstractEntity {
         return age;
     }
 
-    public List<? extends Account> getAccounts() {
+    public List<Account> getAccounts() {
         return accounts;
     }
 
