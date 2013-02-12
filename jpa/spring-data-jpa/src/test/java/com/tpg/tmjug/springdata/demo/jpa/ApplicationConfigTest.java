@@ -42,7 +42,6 @@ public class ApplicationConfigTest {
 	}
 
 	@Test
-    @Ignore("No xml configuration yet")
 	public void bootstrapAppFromXml() {
 
 		ApplicationContext context = new ClassPathXmlApplicationContext("META-INF/spring/application-context.xml");
