@@ -26,11 +26,6 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.junit.Assert.assertThat;
 
-/**
- * Test case bootstrapping both JavaConfig and XML configuration to validate configuration.
- * 
- * @author Oliver Gierke
- */
 public class ApplicationConfigTest {
 
 	@Test
