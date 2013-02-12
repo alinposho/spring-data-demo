@@ -10,14 +10,14 @@ public abstract class AbstractEntity {
 
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-	private String id;
+	private Long id;
 	
-	public AbstractEntity(final String id) {
+	public AbstractEntity(final Long id) {
 		this.id = id;
 	}
     public AbstractEntity() { }
 	
-	public String getId() {
+	public Long getId() {
 		return id;
 	}
 

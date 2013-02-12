@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.tpg.tmjug.springdata.demo.jpa.config;
+package com.tpg.tmjug.springdata.demo.jpa;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -36,8 +36,7 @@ public class InfrastructureConfig {
 	 * Bootstraps an in-memory HSQL database.
 	 *
 	 * @return
-	 * @see http
-	 *      ://static.springsource.org/spring/docs/3.1.x/spring-framework-reference/html/jdbc.html#jdbc-embedded-database
+	 * @see http://static.springsource.org/spring/docs/3.1.x/spring-framework-reference/html/jdbc.html#jdbc-embedded-database
 	 *      -support
 	 */
 	@Bean
@@ -58,10 +57,11 @@ public class InfrastructureConfig {
 		HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
 		vendorAdapter.setDatabase(Database.HSQL);
 		vendorAdapter.setGenerateDdl(true);
+        vendorAdapter.setShowSql(true);
 
 		LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
 		factory.setJpaVendorAdapter(vendorAdapter);
-		factory.setPackagesToScan("com.tpg.tmjug.springdata.demo.jpa");
+		factory.setPackagesToScan("com.tpg.tmjug.springdata.demo");
 		factory.setDataSource(dataSource());
 
 		return factory;

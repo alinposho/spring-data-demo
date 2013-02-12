@@ -1,5 +1,6 @@
 package com.tpg.tmjug.springdata.demo.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import java.util.ArrayList;
@@ -10,13 +11,13 @@ public class Customer extends AbstractEntity {
 
     private String name;
     private int age;
-    @OneToMany
-    private List<Account> accounts;
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Account> accounts = new ArrayList<>();
 
     protected Customer() {
     }
 
-    public Customer(String id, String name, int age, List<Account> accounts) {
+    public Customer(Long id, String name, int age, List<Account> accounts) {
         super(id);
 
         this.name = name;

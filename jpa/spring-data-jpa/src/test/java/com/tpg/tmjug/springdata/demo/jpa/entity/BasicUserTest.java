@@ -2,7 +2,7 @@ package com.tpg.tmjug.springdata.demo.jpa.entity;
 
 import com.tpg.tmjug.springdata.demo.entity.Account;
 import com.tpg.tmjug.springdata.demo.entity.Customer;
-import com.tpg.tmjug.springdata.demo.jpa.config.ApplicationConfig;
+import com.tpg.tmjug.springdata.demo.jpa.ApplicationConfig;
 import com.tpg.tmjug.springdata.demo.repository.CustomerRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -25,13 +25,15 @@ public class BasicUserTest {
 
     @Test
     public void shouldPersistNewUser() {
+        // Prepare
         List<Account> accounts = Arrays.asList(new Account(78L));
-        final Customer customer = new Customer("John", "Doe", 21, accounts);
+        Customer customer = new Customer("Doe", 21, accounts);
 
-        final Customer savedCustomer = genericUserRepository.save(customer);
+        // Exercise
+        Customer savedCustomer = genericUserRepository.save(customer);
+        Customer foundCustomer = genericUserRepository.findOne(savedCustomer.getId());
 
-        final Customer foundCustomer = genericUserRepository.findOne(savedCustomer.getId());
-
+        // Verify
         assertNotNull(savedCustomer);
         assertEquals(savedCustomer, foundCustomer);
     }
