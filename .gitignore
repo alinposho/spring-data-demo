@@ -3,7 +3,9 @@
 /target
 /**/target
 /**/*.iml
+**/*.iml
 /**/.idea
+**/target
 
 /.project
 /**/.project
