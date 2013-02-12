@@ -18,6 +18,9 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.tpg.tmjug.springdata.demo.mongodb.config.BasicUserConfig;
+import com.tpg.tmjug.springdata.demo.mongodb.entity.Account;
+import com.tpg.tmjug.springdata.demo.mongodb.entity.EmailAddress;
+import com.tpg.tmjug.springdata.demo.mongodb.entity.MongoUser;
 import com.tpg.tmjug.springdata.demo.mongodb.repository.CustomUserRepository;
 import com.tpg.tmjug.springdata.demo.mongodb.repository.StatisticsRepository;
 import com.tpg.tmjug.springdata.demo.mongodb.repository.UserRepository;
@@ -41,22 +44,22 @@ public class UserTest {
 
 	@Before
 	public void setup() {
-		template.dropCollection(User.class);
+		template.dropCollection(MongoUser.class);
 	}
 
 	@Test
 	public void test() {
-		final User user1 = new User("John", "Doe", 21);
+		final MongoUser user1 = new MongoUser("John", "Doe", 21);
 		userRepository.save(user1);
 
-		final User user2 = new User("Johnny", "Doe", 22);
+		final MongoUser user2 = new MongoUser("Johnny", "Doe", 22);
 		userRepository.save(user2);
 
 		final long foundUsers = userRepository.count();
 
 		assertTrue(foundUsers == 2);
 
-		assertEquals(new User("John", "Doe", 21), userRepository.findUserByName("John"));
+		assertEquals(new MongoUser("John", "Doe", 21), userRepository.findUserByName("John"));
 	}
 
 	@Test
@@ -71,7 +74,7 @@ public class UserTest {
 
 			magnitude++;
 
-			final User user = new User("User_" + i, "", new double[] { 12.0d, 11.0d + (double)magnitude/1000 }, 20 + magnitude, accounts, new EmailAddress("User_" + i + "@demo.com"));
+			final MongoUser user = new MongoUser("User_" + i, "", new double[] { 12.0d, 11.0d + (double)magnitude/1000 }, 20 + magnitude, accounts, new EmailAddress("User_" + i + "@demo.com"));
 			userRepository.save(user);
 		}
 
@@ -81,12 +84,12 @@ public class UserTest {
 		assertNotNull(accountsTotal);
 
 		/* get users age 25+ */
-		final List<User> matureUsers = customUserRepository.findByAgeGreaterThan(25);
+		final List<MongoUser> matureUsers = customUserRepository.findByAgeGreaterThan(25);
 		assertNotNull(matureUsers);
 
 		/* within range */
 		final Circle centerPoint = new Circle(12.0d, 11.0d, 0.004);
-		final List<User> usersCloseToCenter = customUserRepository.findByLocationWithin(centerPoint);
+		final List<MongoUser> usersCloseToCenter = customUserRepository.findByLocationWithin(centerPoint);
 
 		assertNotNull(usersCloseToCenter);
 		assertEquals(3, usersCloseToCenter.size());

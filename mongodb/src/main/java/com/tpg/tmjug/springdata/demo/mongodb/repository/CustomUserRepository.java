@@ -5,12 +5,12 @@ import java.util.List;
 import org.springframework.data.mongodb.core.geo.Circle;
 import org.springframework.data.repository.Repository;
 
-import com.tpg.tmjug.springdata.demo.mongodb.model.User;
+import com.tpg.tmjug.springdata.demo.mongodb.entity.MongoUser;
  
-public interface CustomUserRepository extends Repository<User, String> {
+public interface CustomUserRepository extends Repository<MongoUser, String> {
 
-	public List<User> findByAgeGreaterThan(final int age);
+	public List<MongoUser> findByAgeGreaterThan(final int age);
 	
-	public List<User> findByLocationWithin(final Circle circle);
+	public List<MongoUser> findByLocationWithin(final Circle circle);
 
 }
