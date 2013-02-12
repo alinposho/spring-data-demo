@@ -30,14 +30,14 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.junit.Assert.assertThat;
 
-@ContextConfiguration(locations = "classpath:META-INF/spring/application-context.xml")
+@ContextConfiguration(locations = "classpath:META-INF/spring/spring-data-jpa-application-context.xml")
 public class SpringDataCustomerRepositoryIntegrationTest extends AbstractIntegrationTest {
 
 	@Autowired
     CustomerRepository repository;
 
 	@Test
-	public void should_inserts_new_customer_correctly() {
+	public void should_inserts_new_customer() {
 
         // Prepare
         List<Account> accounts = Arrays.asList(new Account(78L));
@@ -52,7 +52,7 @@ public class SpringDataCustomerRepositoryIntegrationTest extends AbstractIntegra
 	}
 
 	@Test
-	public void should_find_customer_by_address_correctly() {
+	public void should_find_customer_by_address() {
 
         // Prepare
         Address address = new Address( "27 Broadway", "New York", "United States");

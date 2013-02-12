@@ -16,10 +16,8 @@
 package com.tpg.tmjug.springdata.demo.jpa;
 
 import com.tpg.tmjug.springdata.demo.jpa.repository.CustomerRepository;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -29,10 +27,19 @@ import static org.junit.Assert.assertThat;
 public class ApplicationConfigTest {
 
 	@Test
-	public void bootstrapAppFromXml() {
+	public void bootstrapPlainJpaAppFromXml() {
 
-		ApplicationContext context = new ClassPathXmlApplicationContext("META-INF/spring/application-context.xml");
+		ApplicationContext context = new ClassPathXmlApplicationContext("META-INF/spring/plain-jpa-application-context.xml");
 		assertThat(context, is(notNullValue()));
 		assertThat(context.getBean(CustomerRepository.class), is(notNullValue()));
 	}
+
+    @Test
+    public void bootstrapSpringDataAppFromXml() {
+
+        ApplicationContext context = new ClassPathXmlApplicationContext("META-INF/spring/spring-data-jpa-application-context.xml");
+        assertThat(context, is(notNullValue()));
+        assertThat(context.getBean(CustomerRepository.class), is(notNullValue()));
+    }
+
 }
