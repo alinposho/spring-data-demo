@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.tpg.tmjug.springdata.demo.jpa.repository;
+package com.tpg.tmjug.springdata.demo.jpa.entities;
 
 import org.springframework.util.Assert;
 
@@ -37,7 +37,7 @@ public class Address extends AbstractEntity {
         this.country = country;
     }
 
-    protected Address() {
+    public Address() {
 
     }
 

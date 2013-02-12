@@ -1,4 +1,4 @@
-package com.tpg.tmjug.springdata.demo.jpa.repository;
+package com.tpg.tmjug.springdata.demo.jpa.entities;
 
 import javax.persistence.*;
 import java.util.ArrayList;

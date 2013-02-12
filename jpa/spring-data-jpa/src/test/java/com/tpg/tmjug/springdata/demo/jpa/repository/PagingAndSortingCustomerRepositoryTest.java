@@ -1,5 +1,7 @@
 package com.tpg.tmjug.springdata.demo.jpa.repository;
 
+import com.tpg.tmjug.springdata.demo.jpa.entities.Address;
+import com.tpg.tmjug.springdata.demo.jpa.entities.Customer;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

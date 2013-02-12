@@ -15,9 +15,9 @@
  */
 package com.tpg.tmjug.springdata.demo.jpa;
 
-import com.tpg.tmjug.springdata.demo.jpa.repository.Account;
-import com.tpg.tmjug.springdata.demo.jpa.repository.Address;
-import com.tpg.tmjug.springdata.demo.jpa.repository.Customer;
+import com.tpg.tmjug.springdata.demo.jpa.entities.Account;
+import com.tpg.tmjug.springdata.demo.jpa.entities.Address;
+import com.tpg.tmjug.springdata.demo.jpa.entities.Customer;
 import com.tpg.tmjug.springdata.demo.jpa.repository.CustomerDAO;
 import org.junit.Test;
 import org.junit.runner.RunWith;
