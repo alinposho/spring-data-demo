@@ -7,7 +7,8 @@ public class Account extends AbstractEntity {
 
     private long balance;
 
-    public Account(final long balance) {
+    public Account(Long id, Long balance) {
+        super(id);
         this.balance = balance;
     }
 

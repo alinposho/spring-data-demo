@@ -45,7 +45,7 @@ public class SpringDataCustomerDAOIntegrationTest {
     public void should_inserts_new_customer() {
 
         // Prepare
-        List<Account> accounts = Arrays.asList(new Account(78L));
+        List<Account> accounts = Arrays.asList(new Account(199L, 78L));
         Address address = new Address(3L, "27 Broadway", "New York", "United States");
         Customer customer = new Customer(123L, "Doe@3pg.com", 21, address, accounts);
 
