@@ -17,7 +17,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = "classpath:simple-repository-context.xml")
+@ContextConfiguration(locations = "classpath:repository-context.xml")
 public class BasicCustomerTest {
 
     @Autowired
