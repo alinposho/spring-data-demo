@@ -26,7 +26,9 @@ public class Address extends AbstractEntity {
     private String city;
     private String country;
 
-    public Address(String street, String city, String country) {
+    public Address(Long id, String street, String city, String country) {
+
+        super(id);
 
         Assert.hasText(street, "Street must not be null or empty!");
         Assert.hasText(city, "City must not be null or empty!");
@@ -37,8 +39,11 @@ public class Address extends AbstractEntity {
         this.country = country;
     }
 
-    public Address() {
+    public Address(Long id) {
+        super(id);
+    }
 
+    protected Address() {
     }
 
     public String getStreet() {

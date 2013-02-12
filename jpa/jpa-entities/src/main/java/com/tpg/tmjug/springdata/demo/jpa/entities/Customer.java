@@ -28,12 +28,8 @@ public class Customer extends AbstractEntity {
         this.accounts = accounts;
     }
 
-    public Customer(String name, int age, Address address, List<Account> accounts) {
-        this(null, name, age, address, accounts);
-    }
-
-    public Customer(String name, int age, Address address) {
-        this(null, name, age, address, null);
+    public Customer(Long id, String name, int age, Address address) {
+        this(id, name, age, address, null);
     }
 
     public String getName() {

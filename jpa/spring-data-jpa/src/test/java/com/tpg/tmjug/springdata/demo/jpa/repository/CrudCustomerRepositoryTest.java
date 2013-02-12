@@ -22,7 +22,7 @@ public class CrudCustomerRepositoryTest {
     @Test
     public void should_save_and_retrieve_persisted_customer() {
         // Prepare
-        Customer customer = new Customer("Doe", 21, new Address());
+        Customer customer = new Customer(13L, "Doe", 21, new Address(145L));
 
         // Exercise
         Customer savedCustomer = genericUserRepository.save(customer);

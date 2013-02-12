@@ -5,8 +5,15 @@ import com.tpg.tmjug.springdata.demo.jpa.entities.Customer;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -16,20 +23,34 @@ import static org.junit.Assert.assertNotNull;
 public class PagingAndSortingCustomerRepositoryTest {
 
     @Autowired
-    CrudCustomerRepository crudCustomerRepository;
+    PaginAndSortinCustomerRepository paginAndSortinCustomerRepository;
 
     @Test
     public void should_save_and_retrieve_persisted_customer() {
         // Prepare
-        Customer customer = new Customer("Doe", 21, new Address());
+        List<Customer> customers = createDummyCustomers(9);
 
         // Exercise
-        Customer savedCustomer = crudCustomerRepository.save(customer);
-        Customer foundCustomer = crudCustomerRepository.findOne(savedCustomer.getId());
+        Pageable pageable = new PageRequest(0, 1, Sort.Direction.DESC, "name");
+        Page<Customer> customerPage = paginAndSortinCustomerRepository.findAll(pageable);
+
 
         // Verify
-        assertNotNull(savedCustomer);
-        assertEquals(savedCustomer, foundCustomer);
+        assertNotNull(customerPage);
+        assertEquals(customerPage.getSize(), 1);
+        assertEquals(customers.get(0), customerPage.getContent().get(0));
+    }
+
+    private List<Customer> createDummyCustomers(int numberOfDummyCustomers) {
+        List<Customer> customers = new ArrayList<>();
+
+        for(int i = 0; i < numberOfDummyCustomers; i++) {
+            Customer customer = new Customer(new Long(i), "Doe", 21, new Address(new Long(i)));
+            Customer savedCustomer = paginAndSortinCustomerRepository.save(customer);
+            customers.add(customer);
+        }
+
+        return customers;
     }
 
 

@@ -46,8 +46,8 @@ public class SpringDataCustomerDAOIntegrationTest {
 
         // Prepare
         List<Account> accounts = Arrays.asList(new Account(78L));
-        Address address = new Address("27 Broadway", "New York", "United States");
-        Customer customer = new Customer("Doe@3pg.com", 21, address, accounts);
+        Address address = new Address(3L, "27 Broadway", "New York", "United States");
+        Customer customer = new Customer(123L, "Doe@3pg.com", 21, address, accounts);
 
         // Exercise
         customer = repository.save(customer);
@@ -60,9 +60,9 @@ public class SpringDataCustomerDAOIntegrationTest {
     public void should_find_customer_by_address() {
 
         // Prepare
-        Address address = new Address("27 Broadway", "New York", "United States");
+        Address address = new Address(23L, "27 Broadway", "New York", "United States");
 
-        Customer customer = new Customer("Doe@3pg.com", 21, address);
+        Customer customer = new Customer(22L, "Doe@3pg.com", 21, address);
         customer = repository.save(customer);
 
         // Exercise

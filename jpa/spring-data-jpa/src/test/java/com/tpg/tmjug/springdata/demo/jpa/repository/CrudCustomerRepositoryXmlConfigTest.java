@@ -17,8 +17,7 @@ import static org.junit.Assert.assertTrue;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "classpath:META-INF/spring/application-context.xml")
-@Ignore
-public class CrudCustomerRepositoryXmlConfigTest extends AbstractIntegrationTest {
+public class CrudCustomerRepositoryXmlConfigTest {
 
     @Autowired
     CrudCustomerRepository crudCustomerRepository;
@@ -26,34 +25,21 @@ public class CrudCustomerRepositoryXmlConfigTest extends AbstractIntegrationTest
 
     @After
     public void cleanUp() {
-        crudCustomerRepository.deleteAll();
     }
 
     @Test
     public void should_save_and_retrieve_persisted_customer() {
         // Prepare
-        Customer customer = new Customer("Doe", 21, new Address());
+        Customer customer = new Customer(13L, "Doe", 21, new Address(14L));
 
         // Exercise
         Customer savedCustomer = crudCustomerRepository.save(customer);
         Customer foundCustomer = crudCustomerRepository.findOne(savedCustomer.getId());
 
+
         // Verify
         assertNotNull(savedCustomer);
         assertEquals(savedCustomer, foundCustomer);
-    }
-
-
-    @Test
-    public void should_find_all_customers() {
-        // Exercise
-        Iterable<Customer> allCustomers = crudCustomerRepository.findAll();
-
-
-        // Verify
-        assertNotNull(allCustomers);
-        int expectedNumberOfCustomers = 3;
-        assertTrue("More than one record in the DB", allCustomers.iterator().hasNext());
     }
 
 }
