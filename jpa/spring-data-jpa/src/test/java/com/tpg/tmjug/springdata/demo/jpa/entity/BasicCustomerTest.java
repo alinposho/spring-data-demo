@@ -16,7 +16,7 @@ import static org.junit.Assert.assertNotNull;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = ApplicationConfig.class)
-public class BasicUserTest {
+public class BasicCustomerTest {
 
     @Autowired
     CustomerRepository genericUserRepository;

@@ -16,7 +16,7 @@ import static org.junit.Assert.assertNotNull;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "classpath:META-INF/spring/application-context.xml")
-public class BasicUserXmlConfixTest {
+public class BasicCustomerXmlConfixTest {
 
     @Autowired
     CustomerRepository genericUserRepository;
