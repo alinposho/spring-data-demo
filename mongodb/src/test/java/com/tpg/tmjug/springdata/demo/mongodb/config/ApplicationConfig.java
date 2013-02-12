@@ -1,18 +1,30 @@
 package com.tpg.tmjug.springdata.demo.mongodb.config;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.convert.converter.Converter;
 import org.springframework.data.mongodb.config.AbstractMongoConfiguration;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.SimpleMongoDbFactory;
 import org.springframework.data.mongodb.core.WriteResultChecking;
+import org.springframework.data.mongodb.core.convert.CustomConversions;
+import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
 import com.mongodb.Mongo;
 import com.mongodb.WriteConcern;
 
 @Configuration
-public abstract class ApplicationConfig extends AbstractMongoConfiguration {
+@ComponentScan(basePackages = "com.tpg.tmjug.springdata.demo.mongodb" )
+@EnableMongoRepositories(basePackages = "com.tpg.tmjug.springdata.demo.mongodb")
+public class ApplicationConfig extends AbstractMongoConfiguration {
 
+	@Autowired
+	private List<Converter<?, ?>> converters;
+	
 	@Override
 	protected String getDatabaseName() {
 		return "tmjug_db";
@@ -41,6 +53,11 @@ public abstract class ApplicationConfig extends AbstractMongoConfiguration {
 
 	@Override
 	protected String getMappingBasePackage() {
-		return "com.tpg.tmjug.springdata.demo";
+		return "com.tpg.tmjug.springdata.demo.mongodb";
 	}	
+	
+	@Override
+	public @Bean CustomConversions customConversions() {
+		return new CustomConversions(converters);
+	}
 }

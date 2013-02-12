@@ -1,5 +1,5 @@
 function() {
 	for(i in this.accounts) {
-		emit(this.firstName, this.accounts[i].balance);
+		emit(this._id, this.accounts[i].balance);
 	}
 }

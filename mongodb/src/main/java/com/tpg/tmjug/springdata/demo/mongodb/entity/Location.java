@@ -4,17 +4,16 @@ import org.springframework.data.annotation.PersistenceConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
-public class Account {
-    
-	private long balance;
+public class Location {
 
+	private final double[] position;
+	
 	@PersistenceConstructor
-    public Account(final long balance) {
-        this.balance = balance;
-    }
-
-    public long getBalance() {
-        return balance;
-    }
-    
+	public Location(final double[] position) {
+		this.position = position;
+	}
+	
+	public double[] getPosition() {
+		return position;
+	}
 }

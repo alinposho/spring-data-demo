@@ -18,10 +18,10 @@ public class StatisticsRepositoryImpl implements StatisticsRepository {
 	}
 	
 	/* (non-Javadoc)
-	 * @see com.tpg.tmjug.springdata.demo.mongodb.repository.StatisticsRepository#getUserAccountsTotal()
+	 * @see com.tpg.tmjug.springdata.demo.mongodb.repository.StatisticsRepository#getAccountsTotal()
 	 */
 	@Override
-	public MapReduceResults<ValueObject> getUserAccountsTotal() {
-		return operations.mapReduce("user", "classpath:map.js", "classpath:reduce.js", ValueObject.class);
+	public MapReduceResults<ValueObject> getAccountsTotal() {
+		return operations.mapReduce("customer", "classpath:map.js", "classpath:reduce.js", ValueObject.class);
 	}
 }

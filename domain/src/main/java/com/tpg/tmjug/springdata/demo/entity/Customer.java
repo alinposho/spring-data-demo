@@ -12,12 +12,12 @@ public class Customer extends AbstractEntity {
     private String name;
     private int age;
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Account> accounts = new ArrayList<>();
+    private List<? extends Account> accounts = new ArrayList<>();
 
     protected Customer() {
     }
 
-    public Customer(Long id, String name, int age, List<Account> accounts) {
+    public Customer(Long id, String name, int age, List<? extends Account> accounts) {
         super(id);
 
         this.name = name;
@@ -25,7 +25,7 @@ public class Customer extends AbstractEntity {
         this.accounts = accounts;
     }
 
-    public Customer(String name, int age, List<Account> accounts) {
+    public Customer(String name, int age, List<? extends Account> accounts) {
         this(null, name, age, accounts);
     }
 
@@ -41,7 +41,7 @@ public class Customer extends AbstractEntity {
         return age;
     }
 
-    public List<Account> getAccounts() {
+    public List<? extends Account> getAccounts() {
         return accounts;
     }
 
