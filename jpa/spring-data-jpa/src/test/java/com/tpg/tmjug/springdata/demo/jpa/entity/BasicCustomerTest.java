@@ -22,7 +22,7 @@ public class BasicCustomerTest {
     CustomerRepository genericUserRepository;
 
     @Test
-    public void shouldPersistNewUser() {
+    public void should_persist_new_customer() {
         // Prepare
         List<Account> accounts = Arrays.asList(new Account(78L));
         Customer customer = new Customer("Doe", 21, accounts);

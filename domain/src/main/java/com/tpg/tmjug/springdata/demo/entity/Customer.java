@@ -1,17 +1,12 @@
 package com.tpg.tmjug.springdata.demo.entity;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
 public class Customer extends AbstractEntity {
 
     private String name;
     private int age;
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Account> accounts = new ArrayList<>();
 
     protected Customer() {

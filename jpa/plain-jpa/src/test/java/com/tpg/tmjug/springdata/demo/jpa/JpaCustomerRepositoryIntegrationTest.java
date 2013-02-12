@@ -37,7 +37,7 @@ public class JpaCustomerRepositoryIntegrationTest extends AbstractIntegrationTes
     CustomerRepository repository;
 
 	@Test
-	public void insertsNewCustomerCorrectly() {
+	public void should_inserts_new_customer_correctly() {
 
         // Prepare
         List<Account> accounts = Arrays.asList(new Account(78L));
@@ -52,7 +52,7 @@ public class JpaCustomerRepositoryIntegrationTest extends AbstractIntegrationTes
 	}
 
 	@Test
-	public void updatesCustomerCorrectly() {
+	public void should_find_customer_by_address_correctly() {
 
         // Prepare
         Address address = new Address( "27 Broadway", "New York", "United States");
