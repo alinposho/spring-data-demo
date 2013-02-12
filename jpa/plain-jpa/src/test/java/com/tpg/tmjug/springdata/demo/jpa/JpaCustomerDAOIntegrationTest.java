@@ -19,6 +19,7 @@ import com.tpg.tmjug.springdata.demo.jpa.entities.Account;
 import com.tpg.tmjug.springdata.demo.jpa.entities.Address;
 import com.tpg.tmjug.springdata.demo.jpa.entities.Customer;
 import com.tpg.tmjug.springdata.demo.jpa.repository.CustomerDAO;
+import com.tpg.tmjug.springdata.demo.jpa.repository.JpaCustomerDAO;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,7 +40,7 @@ import static org.junit.Assert.assertThat;
 public class JpaCustomerDAOIntegrationTest {
 
 	@Autowired
-    CustomerDAO repository;
+    JpaCustomerDAO repository;
 
 	@Test
 	public void should_inserts_new_customer() {
