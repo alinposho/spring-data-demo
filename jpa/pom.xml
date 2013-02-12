@@ -15,6 +15,7 @@
         <module>plain-jpa</module>
         <module>spring-data-jpa</module>
         <module>spring-data-basic-jpa</module>
+        <module>jpa-entities</module>
     </modules>
 
     <dependencies>
