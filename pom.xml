@@ -14,6 +14,8 @@
         <module>domain</module>
         <module>mongodb</module>
         <module>jpa</module>
+        <module>plain-jpa</module>
+        <module>spring-data-jpa</module>
     </modules>
 
     <properties>
