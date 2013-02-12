@@ -22,7 +22,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 
 @Repository
-class JpaCustomerRepository implements CustomerRepository {
+class JpaCustomerDAO implements CustomerDAO {
 
 	@PersistenceContext
 	private EntityManager em;

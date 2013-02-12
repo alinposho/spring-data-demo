@@ -15,7 +15,7 @@
  */
 package com.tpg.tmjug.springdata.demo.jpa;
 
-import com.tpg.tmjug.springdata.demo.jpa.repository.CustomerRepository;
+import com.tpg.tmjug.springdata.demo.jpa.repository.CustomerDAO;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -31,7 +31,7 @@ public class ApplicationConfigTest {
 
 		ApplicationContext context = new ClassPathXmlApplicationContext("META-INF/spring/plain-jpa-application-context.xml");
 		assertThat(context, is(notNullValue()));
-		assertThat(context.getBean(CustomerRepository.class), is(notNullValue()));
+		assertThat(context.getBean(CustomerDAO.class), is(notNullValue()));
 	}
 
     @Test
@@ -39,7 +39,7 @@ public class ApplicationConfigTest {
 
         ApplicationContext context = new ClassPathXmlApplicationContext("META-INF/spring/spring-data-jpa-application-context.xml");
         assertThat(context, is(notNullValue()));
-        assertThat(context.getBean(CustomerRepository.class), is(notNullValue()));
+        assertThat(context.getBean(CustomerDAO.class), is(notNullValue()));
     }
 
 }

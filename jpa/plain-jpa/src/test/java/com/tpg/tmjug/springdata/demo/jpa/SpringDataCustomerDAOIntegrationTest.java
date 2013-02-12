@@ -18,7 +18,7 @@ package com.tpg.tmjug.springdata.demo.jpa;
 import com.tpg.tmjug.springdata.demo.jpa.repository.Account;
 import com.tpg.tmjug.springdata.demo.jpa.repository.Address;
 import com.tpg.tmjug.springdata.demo.jpa.repository.Customer;
-import com.tpg.tmjug.springdata.demo.jpa.repository.CustomerRepository;
+import com.tpg.tmjug.springdata.demo.jpa.repository.CustomerDAO;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
@@ -30,11 +30,11 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.junit.Assert.assertThat;
 
-@ContextConfiguration(locations = "classpath:META-INF/spring/plain-jpa-application-context.xml")
-public class JpaCustomerRepositoryIntegrationTest extends AbstractIntegrationTest {
+@ContextConfiguration(locations = "classpath:META-INF/spring/spring-data-jpa-application-context.xml")
+public class SpringDataCustomerDAOIntegrationTest extends AbstractIntegrationTest {
 
 	@Autowired
-    CustomerRepository repository;
+    CustomerDAO repository;
 
 	@Test
 	public void should_inserts_new_customer() {

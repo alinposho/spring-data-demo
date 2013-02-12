@@ -2,7 +2,7 @@ package com.tpg.tmjug.springdata.demo.jpa.repository;
 
 import org.springframework.data.repository.Repository;
 
-public interface CustomerRepository extends Repository<Customer, Long> {
+public interface CustomerDAO extends Repository<Customer, Long> {
 
     Customer findOne(Long id);
 
