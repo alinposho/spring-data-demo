@@ -22,6 +22,7 @@ import org.springframework.stereotype.Repository;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
+import java.util.List;
 
 @Repository
 class JpaCustomerDAOImpl implements JpaCustomerDAO {
@@ -44,13 +45,13 @@ class JpaCustomerDAOImpl implements JpaCustomerDAO {
     }
 
     @Override
-    public Customer findByAddress(Address address) {
+    public List<Customer> findByAddress(Address address) {
 
         TypedQuery<Customer> query = em.createQuery("select c from Customer c where c.address = :address",
                 Customer.class);
         query.setParameter("address", address);
 
-        return query.getSingleResult();
+        return query.getResultList();
     }
 
 }

@@ -66,9 +66,10 @@ public class SpringDataCustomerDAOIntegrationTest {
         customer = repository.save(customer);
 
         // Exercise
-        Customer foundCustomer = repository.findByAddress(address);
+        List<Customer> foundCustomer = repository.findByAddress(address);
 
         // Verify
-        assertThat(foundCustomer, is(customer));
+        assertThat(foundCustomer.size(), is(1));
+        assertThat(foundCustomer.get(0), is(customer));
     }
 }

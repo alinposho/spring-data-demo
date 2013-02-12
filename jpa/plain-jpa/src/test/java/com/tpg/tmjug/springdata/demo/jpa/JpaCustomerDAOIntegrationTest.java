@@ -18,7 +18,6 @@ package com.tpg.tmjug.springdata.demo.jpa;
 import com.tpg.tmjug.springdata.demo.jpa.entities.Account;
 import com.tpg.tmjug.springdata.demo.jpa.entities.Address;
 import com.tpg.tmjug.springdata.demo.jpa.entities.Customer;
-import com.tpg.tmjug.springdata.demo.jpa.repository.CustomerDAO;
 import com.tpg.tmjug.springdata.demo.jpa.repository.JpaCustomerDAO;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -67,9 +66,10 @@ public class JpaCustomerDAOIntegrationTest {
         customer = repository.save(customer);
 
         // Exercise
-        Customer foundCustomer = repository.findByAddress(address);
+        List<Customer> foundCustomer = repository.findByAddress(address);
 
         // Verify
-		assertThat(foundCustomer, is(customer));
+        assertThat(foundCustomer.size(), is(1));
+		assertThat(foundCustomer.get(0), is(customer));
 	}
 }
