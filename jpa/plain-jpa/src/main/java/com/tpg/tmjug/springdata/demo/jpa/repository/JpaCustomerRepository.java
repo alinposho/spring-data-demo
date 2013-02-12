@@ -15,8 +15,6 @@
  */
 package com.tpg.tmjug.springdata.demo.jpa.repository;
 
-import com.tpg.tmjug.springdata.demo.jpa.entity.Address;
-import com.tpg.tmjug.springdata.demo.jpa.entity.Customer;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;

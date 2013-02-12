@@ -13,7 +13,7 @@
     <packaging>pom</packaging>
 
     <dependencies>
-        <!-- The domain project -->
+        <!-- The jpa entities project -->
         <dependency>
             <groupId>spring-data-demo</groupId>
             <artifactId>jpa-entities</artifactId>

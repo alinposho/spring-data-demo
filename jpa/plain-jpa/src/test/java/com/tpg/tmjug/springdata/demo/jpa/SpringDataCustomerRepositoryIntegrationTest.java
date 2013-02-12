@@ -15,9 +15,9 @@
  */
 package com.tpg.tmjug.springdata.demo.jpa;
 
-import com.tpg.tmjug.springdata.demo.jpa.entity.Account;
-import com.tpg.tmjug.springdata.demo.jpa.entity.Address;
-import com.tpg.tmjug.springdata.demo.jpa.entity.Customer;
+import com.tpg.tmjug.springdata.demo.jpa.repository.Account;
+import com.tpg.tmjug.springdata.demo.jpa.repository.Address;
+import com.tpg.tmjug.springdata.demo.jpa.repository.Customer;
 import com.tpg.tmjug.springdata.demo.jpa.repository.CustomerRepository;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;

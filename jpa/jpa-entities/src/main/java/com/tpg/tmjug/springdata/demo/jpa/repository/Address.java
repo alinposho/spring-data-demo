@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.tpg.tmjug.springdata.demo.jpa.entity;
+package com.tpg.tmjug.springdata.demo.jpa.repository;
 
 import org.springframework.util.Assert;
 

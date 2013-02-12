@@ -1,4 +1,4 @@
-package com.tpg.tmjug.springdata.demo.jpa.entity;
+package com.tpg.tmjug.springdata.demo.jpa.repository;
 
 import javax.persistence.Entity;
 

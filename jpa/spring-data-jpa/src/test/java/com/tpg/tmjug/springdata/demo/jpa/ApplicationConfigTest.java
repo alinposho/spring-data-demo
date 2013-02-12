@@ -15,8 +15,7 @@
  */
 package com.tpg.tmjug.springdata.demo.jpa;
 
-import com.tpg.tmjug.springdata.demo.jpa.repository.CustomerRepository;
-import org.junit.Ignore;
+import com.tpg.tmjug.springdata.demo.jpa.repository.CrudCustomerRepository;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -33,7 +32,7 @@ public class ApplicationConfigTest {
 
 		ApplicationContext context = new AnnotationConfigApplicationContext(ApplicationConfig.class);
 		assertThat(context, is(notNullValue()));
-		assertThat(context.getBean(CustomerRepository.class), is(notNullValue()));
+		assertThat(context.getBean(CrudCustomerRepository.class), is(notNullValue()));
 	}
 
 	@Test
@@ -41,6 +40,6 @@ public class ApplicationConfigTest {
 
 		ApplicationContext context = new ClassPathXmlApplicationContext("META-INF/spring/application-context.xml");
 		assertThat(context, is(notNullValue()));
-		assertThat(context.getBean(CustomerRepository.class), is(notNullValue()));
+		assertThat(context.getBean(CrudCustomerRepository.class), is(notNullValue()));
 	}
 }
