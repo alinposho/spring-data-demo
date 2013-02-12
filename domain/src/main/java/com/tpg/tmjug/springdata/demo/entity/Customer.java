@@ -3,6 +3,9 @@ package com.tpg.tmjug.springdata.demo.entity;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.OneToMany;
+
 public class Customer extends AbstractEntity {
 
     private String name;
