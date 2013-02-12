@@ -24,7 +24,7 @@ public class BasicCustomerTest {
     CustomerRepository genericCustomerRepository;
 
     @Test
-    public void should_persist_and_find_new_customer() {
+    public void should_persist_and_retrieve_customer() {
         // Prepare
         List<Account> accounts = Arrays.asList(new Account(13L, 78L));
         Customer customer = new Customer(123L, "Doe", 21, accounts);
