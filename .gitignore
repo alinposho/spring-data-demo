@@ -1,14 +1,18 @@
-/*.iml
-/.idea
-/target
-/**/target
-/**/*.iml
-**/*.iml
-/**/.idea
-**/target
+#Build
+target
+target-eclipse
+*.class
+#Misc
+*~
+*.info
 
-/.project
-/**/.project
+#Idea
+*.iml
+*.ipr
+*.iws
+.idea
 
-/.settings*
-/**/.settings*
+#Eclipse
+.classpath
+.project
+.settings
