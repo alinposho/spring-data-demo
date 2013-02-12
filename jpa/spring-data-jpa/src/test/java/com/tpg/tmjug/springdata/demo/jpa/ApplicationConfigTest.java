@@ -15,7 +15,7 @@
  */
 package com.tpg.tmjug.springdata.demo.jpa;
 
-import com.tpg.tmjug.springdata.demo.repository.CustomerRepository;
+import com.tpg.tmjug.springdata.demo.jpa.repository.CustomerRepository;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
