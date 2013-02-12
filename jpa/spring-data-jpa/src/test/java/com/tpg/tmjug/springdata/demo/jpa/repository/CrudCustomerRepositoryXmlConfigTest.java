@@ -2,6 +2,7 @@ package com.tpg.tmjug.springdata.demo.jpa.repository;
 
 import com.tpg.tmjug.springdata.demo.jpa.AbstractIntegrationTest;
 import org.junit.After;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,7 @@ import static org.junit.Assert.assertTrue;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "classpath:META-INF/spring/application-context.xml")
+@Ignore
 public class CrudCustomerRepositoryXmlConfigTest extends AbstractIntegrationTest {
 
     @Autowired
