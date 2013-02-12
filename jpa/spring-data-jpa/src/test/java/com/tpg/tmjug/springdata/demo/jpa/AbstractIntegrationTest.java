@@ -15,6 +15,7 @@
  */
 package com.tpg.tmjug.springdata.demo.jpa;
 
+import org.junit.Before;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
@@ -28,7 +29,6 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@Transactional
 public abstract class AbstractIntegrationTest {
 
 	@Autowired
@@ -39,7 +39,7 @@ public abstract class AbstractIntegrationTest {
 	 *
 	 * @throws java.sql.SQLException
 	 */
-//	@Before
+	@Before
 	public void populateDatabase() throws SQLException {
 
 		ResourceDatabasePopulator populator = new ResourceDatabasePopulator();

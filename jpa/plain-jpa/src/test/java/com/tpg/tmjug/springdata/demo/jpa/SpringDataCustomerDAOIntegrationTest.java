@@ -20,8 +20,11 @@ import com.tpg.tmjug.springdata.demo.jpa.repository.Address;
 import com.tpg.tmjug.springdata.demo.jpa.repository.Customer;
 import com.tpg.tmjug.springdata.demo.jpa.repository.CustomerDAO;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Arrays;
 import java.util.List;
@@ -30,32 +33,34 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.junit.Assert.assertThat;
 
+@RunWith(SpringJUnit4ClassRunner.class)
+@Transactional
 @ContextConfiguration(locations = "classpath:META-INF/spring/spring-data-jpa-application-context.xml")
-public class SpringDataCustomerDAOIntegrationTest extends AbstractIntegrationTest {
+public class SpringDataCustomerDAOIntegrationTest {
 
-	@Autowired
+    @Autowired
     CustomerDAO repository;
 
-	@Test
-	public void should_inserts_new_customer() {
+    @Test
+    public void should_inserts_new_customer() {
 
         // Prepare
         List<Account> accounts = Arrays.asList(new Account(78L));
-        Address address = new Address( "27 Broadway", "New York", "United States");
+        Address address = new Address("27 Broadway", "New York", "United States");
         Customer customer = new Customer("Doe@3pg.com", 21, address, accounts);
 
         // Exercise
-		customer = repository.save(customer);
+        customer = repository.save(customer);
 
         // Verify
-		assertThat(customer.getId(), is(notNullValue()));
-	}
+        assertThat(customer.getId(), is(notNullValue()));
+    }
 
-	@Test
-	public void should_find_customer_by_address() {
+    @Test
+    public void should_find_customer_by_address() {
 
         // Prepare
-        Address address = new Address( "27 Broadway", "New York", "United States");
+        Address address = new Address("27 Broadway", "New York", "United States");
 
         Customer customer = new Customer("Doe@3pg.com", 21, address);
         customer = repository.save(customer);
@@ -64,6 +69,6 @@ public class SpringDataCustomerDAOIntegrationTest extends AbstractIntegrationTes
         Customer foundCustomer = repository.findByAddress(address);
 
         // Verify
-		assertThat(foundCustomer, is(customer));
-	}
+        assertThat(foundCustomer, is(customer));
+    }
 }

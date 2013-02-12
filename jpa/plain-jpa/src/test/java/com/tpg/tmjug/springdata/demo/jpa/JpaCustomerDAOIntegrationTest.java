@@ -20,8 +20,11 @@ import com.tpg.tmjug.springdata.demo.jpa.repository.Address;
 import com.tpg.tmjug.springdata.demo.jpa.repository.Customer;
 import com.tpg.tmjug.springdata.demo.jpa.repository.CustomerDAO;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Arrays;
 import java.util.List;
@@ -30,8 +33,10 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.junit.Assert.assertThat;
 
+@RunWith(SpringJUnit4ClassRunner.class)
+@Transactional
 @ContextConfiguration(locations = "classpath:META-INF/spring/plain-jpa-application-context.xml")
-public class JpaCustomerDAOIntegrationTest extends AbstractIntegrationTest {
+public class JpaCustomerDAOIntegrationTest {
 
 	@Autowired
     CustomerDAO repository;
