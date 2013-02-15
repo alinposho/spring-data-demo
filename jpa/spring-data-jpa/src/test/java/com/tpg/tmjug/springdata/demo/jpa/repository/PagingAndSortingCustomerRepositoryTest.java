@@ -52,7 +52,7 @@ public class PagingAndSortingCustomerRepositoryTest {
     }
 
     @Test
-    public void findByAttributeAndValue_should_retrieve_the_customers_filtered_by_age() {
+    public void findByAge_should_retrieve_the_customers_filtered_by_age() {
         // Prepare
         int numberOfDummyCustomers = 9;
         List<Customer> customers = createDummyCustomers(numberOfDummyCustomers);
@@ -69,7 +69,7 @@ public class PagingAndSortingCustomerRepositoryTest {
     }
 
     @Test
-    public void findByAttributeAndValue_should_retrieve_the_customers_starting_with_age() {
+    public void findByAgeGreaterThan_should_retrieve_the_customers_starting_with_age() {
         // Prepare
         int numberOfDummyCustomers = 9;
         List<Customer> customers = createDummyCustomers(numberOfDummyCustomers);
@@ -86,7 +86,7 @@ public class PagingAndSortingCustomerRepositoryTest {
     }
 
     @Test
-    public void findByAttributeAndValue_should_retrieve_the_customers_between_specific_age_values() {
+    public void findByAgeBetween_should_retrieve_the_customers_between_specific_age_values() {
         // Prepare
         int numberOfDummyCustomers = 9;
         List<Customer> customers = createDummyCustomers(numberOfDummyCustomers);
@@ -103,7 +103,7 @@ public class PagingAndSortingCustomerRepositoryTest {
     }
 
     @Test
-    public void findByAttributeAndValue_should_retrieve_the_customers_with_specific_age_and_name() {
+    public void findByAgeAndName_should_retrieve_the_customers_with_specific_age_and_name() {
         // Prepare
         int numberOfDummyCustomers = 9;
         List<Customer> customers = createDummyCustomers(numberOfDummyCustomers);
@@ -122,6 +122,43 @@ public class PagingAndSortingCustomerRepositoryTest {
 
     }
 
+    @Test
+    public void findByNameAndAgeGreaterThan_should_retrieve_the_customers_with_specific_age_and_name() {
+        // Prepare
+        int numberOfDummyCustomers = 9;
+        List<Customer> customers = createDummyCustomers(numberOfDummyCustomers);
+
+        // Exercise
+        int startAge = 1;
+        List<Customer> filteredCustomers = paginAndSortinCustomerRepository.findByNameAndAgeGreaterThan(DUMMY_CUSTOMER_NAME, startAge);
+
+
+        // Verify
+        assertNotNull(filteredCustomers);
+        assertEquals(7, filteredCustomers.size());
+        assertTrue("The list of customers is filtered by age greater than and name", customers.containsAll(filteredCustomers));
+
+    }
+
+    @Test
+    public void findByNameAndAgeGreaterThanPaginated_should_retrieve_the_customers_with_specific_age_and_name() {
+        // Prepare
+        int numberOfDummyCustomers = 9;
+        List<Customer> customers = createDummyCustomers(numberOfDummyCustomers);
+
+        // Exercise
+        int startAge = 1;
+        Pageable pageable = new PageRequest(0, 1, Sort.Direction.DESC, "name");
+        Page<Customer> filteredCustomers = paginAndSortinCustomerRepository.findByNameAndAgeGreaterThan(DUMMY_CUSTOMER_NAME, startAge, pageable);
+
+
+        // Verify
+        assertNotNull(filteredCustomers);
+        assertEquals(1, filteredCustomers.getSize());
+        Customer foundCustomer = filteredCustomers.getContent().get(0);
+        assertTrue("Only one customer per page", customers.contains(foundCustomer));
+
+    }
 
 
     private List<Customer> createDummyCustomers(int numberOfDummyCustomers) {

@@ -1,6 +1,8 @@
 package com.tpg.tmjug.springdata.demo.jpa.repository;
 
 import com.tpg.tmjug.springdata.demo.jpa.entities.Customer;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
@@ -17,4 +19,8 @@ public interface PaginAndSortinCustomerRepository extends PagingAndSortingReposi
     List<Customer> findByAgeBetween(int start, int end);
 
     List<Customer> findByAgeAndName(int age, String name);
+
+    List<Customer> findByNameAndAgeGreaterThan(String name, int start);
+
+    Page<Customer> findByNameAndAgeGreaterThan(String name, int start, Pageable pageable);
 }
